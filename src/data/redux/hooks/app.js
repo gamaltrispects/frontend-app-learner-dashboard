@@ -110,6 +110,6 @@ export const useLoadData = () => {
     );
 
     const reorderedCourses = [...notCompleted, ...completed];
-    dispatch(actions.loadCourses({ reorderedCourses }));
+    dispatch(actions.loadCourses({ courses: reorderedCourses }));
   };
 };
