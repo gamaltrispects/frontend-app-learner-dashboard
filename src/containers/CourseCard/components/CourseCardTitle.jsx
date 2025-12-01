@@ -11,7 +11,7 @@ export const CourseCardTitle = ({ cardId }) => {
   const { courseName } = reduxHooks.useCardCourseData(cardId);
   const { isPassing } = reduxHooks.useCardGradeData(cardId);
   const { homeUrl, isStarted } = reduxHooks.useCardCourseRunData(cardId);
-
+  const { hasStarted } = reduxHooks.useCardEnrollmentData(cardId);
   const handleTitleClicked = reduxHooks.useTrackCourseEvent(
     courseTitleClicked,
     cardId,
@@ -23,7 +23,7 @@ export const CourseCardTitle = ({ cardId }) => {
   let statusLabel = 'Not started';
   if (isPassing) {
     statusLabel = 'Completed';
-  } else if (isStarted) {
+  } else if (hasStarted) {
     statusLabel = 'Started';
   }
 
