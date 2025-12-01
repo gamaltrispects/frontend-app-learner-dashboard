@@ -102,6 +102,10 @@ export const useLoadData = () => {
   return ({ courses, ...globalData }) => {
     dispatch(actions.setPageNumber(1));
     dispatch(actions.loadGlobalData(globalData));
+    console.log(courses)
+    console.log(courses)
+    console.log(courses)
+    console.log(courses)
     dispatch(actions.loadCourses({ courses }));
   };
 };
