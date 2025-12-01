@@ -10,8 +10,12 @@ const { courseTitleClicked } = track.course;
 export const CourseCardTitle = ({ cardId }) => {
   const { courseName } = reduxHooks.useCardCourseData(cardId);
   const courseData = reduxHooks.useCardCourseData(cardId);
+  const GradeData = reduxHooks.useCardGradeData(cardId);
+  const courseRun = reduxHooks.useCardCourseRunData(cardId);
   console.log("============ courseData ========================");
   console.log(courseData);
+  console.log(GradeData);
+  console.log(courseRun);
   console.log("============ courseData ========================");
   const { homeUrl } = reduxHooks.useCardCourseRunData(cardId);
   const handleTitleClicked = reduxHooks.useTrackCourseEvent(
