@@ -102,10 +102,14 @@ export const useLoadData = () => {
   return ({ courses, ...globalData }) => {
     dispatch(actions.setPageNumber(1));
     dispatch(actions.loadGlobalData(globalData));
-    console.log(courses)
-    console.log(courses)
-    console.log(courses)
-    console.log(courses)
-    dispatch(actions.loadCourses({ courses }));
+    const notCompleted = courses.filter(
+      (c) => !c.gradeData?.isPassing
+    );
+    const completed = courses.filter(
+      (c) => c.gradeData?.isPassing
+    );
+
+    const reorderedCourses = [...notCompleted, ...completed];
+    dispatch(actions.loadCourses({ reorderedCourses }));
   };
 };
