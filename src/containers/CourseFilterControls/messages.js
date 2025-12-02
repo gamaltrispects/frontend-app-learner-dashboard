@@ -51,6 +51,11 @@ const messages = defineMessages({
     description: 'Title sort option text',
     defaultMessage: 'Title (A-Z)',
   },
+  notComplete: {
+    id: 'learner-dash.courseListFilters.notComplete',
+    description: 'Sort complete course at end of the page',
+    defaultMessage: 'Incompleted',
+  },
   refine: {
     id: 'learner-dash.courseListFilters.refine',
     description: 'Filter button container text',

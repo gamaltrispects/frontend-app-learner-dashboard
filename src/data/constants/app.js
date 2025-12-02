@@ -7,6 +7,7 @@ export const locationId = window.location.pathname.slice(1);
 export const SortKeys = StrictDict({
   enrolled: 'enrolled',
   title: 'title',
+  notcomplete: 'notcomplete',
 });
 
 export const FilterKeys = StrictDict({

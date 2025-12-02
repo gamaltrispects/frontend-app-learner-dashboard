@@ -27,6 +27,9 @@ export const SortForm = ({
         <Form.Radio className="py-2" value={SortKeys.title}>
           {formatMessage(messages.sortTitle)}
         </Form.Radio>
+        <Form.Radio className="py-2" value={SortKeys.notcomplete}>
+          {formatMessage(messages.notComplete)}
+        </Form.Radio>
       </Form.RadioSet>
     </>
   );
