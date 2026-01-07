@@ -12,6 +12,7 @@ import messages from './messages';
 export const ResumeButton = ({ cardId }) => {
   const { formatMessage } = useIntl();
   const { resumeUrl } = reduxHooks.useCardCourseRunData(cardId);
+  const { isPassing } = reduxHooks.useCardGradeData(cardId);
   const execEdTrackingParam = reduxHooks.useCardExecEdTrackingParam(cardId);
   const { disableResumeCourse } = useActionDisabledState(cardId);
 
@@ -20,14 +21,21 @@ export const ResumeButton = ({ cardId }) => {
     cardId,
     resumeUrl + execEdTrackingParam,
   );
+
+  let statusLabel = formatMessage(messages.resume);
+  if (isPassing) {
+    statusLabel = 'Completed';
+  }
+
   return (
     <ActionButton
       disabled={disableResumeCourse}
       as="a"
       href="#"
       onClick={handleClick}
+      variant={isPassing ? 'success' : 'primary'}
     >
-      {formatMessage(messages.resume)}
+      {statusLabel}
     </ActionButton>
   );
 };
